@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class PlayerGUI extends JFrame{
+public class PlayerGUI extends JFrame {
 
     private JPanel rootPanel;
     private JPanel panel;
@@ -35,6 +35,7 @@ public class PlayerGUI extends JFrame{
 
         menuBar.add(menuFile);
         setJMenuBar(menuBar);
+        setPreferredSize(new Dimension(400, 500));
     }
 
 
