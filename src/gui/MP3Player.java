@@ -8,7 +8,7 @@ import java.awt.*;
 public class MP3Player extends JFrame {
     private JPanel panelPlayer;
     private JPanel panelPlaylist;
-    private JPanel panel;
+
     private JMenuBar menuBar;
     private JMenu menuFile;
     private JMenu menuService;
@@ -18,6 +18,15 @@ public class MP3Player extends JFrame {
     private JMenu menuChangeSkin;
     private JMenuItem skinOne;
     private JMenuItem skinTwo;
+
+    private JButton btnPlay;
+    private JButton btnPause;
+    private JButton btnStop;
+    private JButton btnRewind;
+    private JButton btnFastForward;
+    private JSlider sldVolume;
+    private JSlider sldTrack;
+
     private ActionListenerMenuBar listenerMenuBar;
 
     public MP3Player(String title) throws HeadlessException {
@@ -26,6 +35,7 @@ public class MP3Player extends JFrame {
         setDefaultLookAndFeelDecorated(true);
         setSize(500,500);
         listenerMenuBar = new ActionListenerMenuBar();
+        setLayout(new BorderLayout());
     }
 
 
@@ -47,6 +57,7 @@ public class MP3Player extends JFrame {
         menuChangeSkin.add(skinOne = new JMenuItem("Skin 1"));
         menuChangeSkin.add(skinTwo = new JMenuItem("Skin 2"));
         skinOne.addActionListener(listenerMenuBar);
+        skinTwo.addActionListener(listenerMenuBar);
 
         menuBar.add(menuFile);
         menuBar.add(menuService);
