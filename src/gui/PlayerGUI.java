@@ -21,6 +21,7 @@ public class PlayerGUI extends JFrame {
         super(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setDefaultLookAndFeelDecorated(true);
+        setPreferredSize(new Dimension(400, 500));
     }
 
 
@@ -35,7 +36,7 @@ public class PlayerGUI extends JFrame {
 
         menuBar.add(menuFile);
         setJMenuBar(menuBar);
-        setPreferredSize(new Dimension(400, 500));
+
     }
 
 
