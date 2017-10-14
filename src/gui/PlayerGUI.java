@@ -9,8 +9,12 @@ import java.awt.*;
 public class PlayerGUI extends JFrame {
 
     private JPanel rootPanel;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
     private JSlider slider1;
-    private JScrollBar scrollBar1;
+    private JSpinner spinner1;
     private JPanel panel;
     private JMenuBar menuBar;
     private JMenu menuFile;
