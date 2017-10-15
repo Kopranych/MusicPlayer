@@ -2,17 +2,16 @@ package control;
 
 import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.jtattoo.plaf.texture.TextureLookAndFeel;
-import gui.MP3Player;
-import oracle.jrockit.jfr.JFR;
+import gui.MP3PlayerWindow;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ActionListenerMenuBar implements ActionListener {
-    private MP3Player windowPlayer;
+    private MP3PlayerWindow windowPlayer;
 
-    public void setWindowPlayer(MP3Player windowPlayer) {
+    public void setWindowPlayer(MP3PlayerWindow windowPlayer) {
         this.windowPlayer = windowPlayer;
     }
 

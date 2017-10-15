@@ -9,7 +9,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class MP3Player extends JFrame {
+public class MP3PlayerWindow extends JFrame {
     private JPanel panelPlayer;
     private JPanel panelPlaylist;
     private JPanel panelManager;
@@ -53,7 +53,7 @@ public class MP3Player extends JFrame {
     private static final int WIDTH_WINDOW = 400;
     private static final int HEIGHT_WINDOW = 500;
 
-    public MP3Player(String title) throws HeadlessException {
+    public MP3PlayerWindow(String title) throws HeadlessException {
         super(title);
         setIconImage(new ImageIcon("C:\\JavaDevelopment\\MusicPleer\\src\\icon\\multimedia-player.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -170,8 +170,29 @@ public class MP3Player extends JFrame {
         panelPlaylist.add(BorderLayout.CENTER, scrolList);
         panelPlaylist.add(BorderLayout.SOUTH, panelBtnPlaylist = new JPanel());
         panelPlaylist.add(BorderLayout.NORTH, panelSearch = new JPanel());
-        panelSearch.add(fieldSearch = new JTextField());
-        panelSearch.add(btnSearch = new ButtonImproved("Найти"));
+        panelSearch.setLayout(new BorderLayout());
+        panelSearch.add(BorderLayout.CENTER, fieldSearch = new JTextField());
+        panelSearch.add(BorderLayout.EAST, btnSearch = new ButtonImproved("Найти"));
+        btnSearch.addIconButton("C:\\JavaDevelopment\\MusicPleer\\src\\icon\\search.png");
+        fieldSearch.setText("Введите название песни");
+        fieldSearch.setForeground(Color.GRAY);
+        fieldSearch.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if(fieldSearch.getText().trim().equals("Введите название песни")){
+                    fieldSearch.setText("");
+                    fieldSearch.setForeground(Color.BLACK);
+                }
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                if(fieldSearch.getText().trim().equals("")){
+                    fieldSearch.setText("Введите название песни");
+                    fieldSearch.setForeground(Color.GRAY);
+                }
+            }
+        });
 
         btnAddTrack = new ButtonImproved();
         btnAddTrack.addIconButton("C:\\JavaDevelopment\\MusicPleer\\src\\icon\\add.png");

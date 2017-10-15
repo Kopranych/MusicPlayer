@@ -1,6 +1,5 @@
 import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
-import gui.MP3Player;
-import gui.PlayerGUI;
+import gui.MP3PlayerWindow;
 
 import javax.swing.*;
 
@@ -11,7 +10,7 @@ public class Main {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-        MP3Player windowPlayer = new MP3Player("Player");
+        MP3PlayerWindow windowPlayer = new MP3PlayerWindow("Player");
         windowPlayer.createUIComponents();
         windowPlayer.setVisible(true);
     }
