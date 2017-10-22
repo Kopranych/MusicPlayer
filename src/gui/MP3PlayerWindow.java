@@ -194,6 +194,13 @@ public class MP3PlayerWindow extends JFrame {
             }
         });
 
+        fieldSearch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
         btnAddTrack = new ButtonImproved();
         btnAddTrack.addIconButton("C:\\JavaDevelopment\\MusicPleer\\src\\icon\\add.png");
         btnAddTrack.removeFrameButton();
